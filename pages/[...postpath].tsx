@@ -75,7 +75,8 @@ const Post: React.FC<PostProps> = (props) => {
 	const getImage = (str: string) => {
 		if (str === null || str === '') return 'https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg';
 		else str = str.toString();
-		return str.match(/(https?:\/\/\S+(?:png|jpe?g|gif))/)[0];
+		const arrayMatch=str.match(/(https?:\/\/\S+(?:png|jpe?g|gif))/);
+		return arrayMatch?arrayMatch[0]:'https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg';
 	};
 
 	return (
